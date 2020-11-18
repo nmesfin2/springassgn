@@ -77,13 +77,13 @@ public class Main {
 				case 2:
 					System.out.println("------------------------------------------------------------------------------"); 
 					System.out.println("updating employee"); 
-					status = employeeService.updateEmployee(1, 1, 1, "My Name changed", 29, "My Position changed"); 
+					// status = employeeService.updateEmployee(1, 1, 1, "My Name changed", 29, "My Position changed"); 
 					System.out.println(status); System.out.println();
 			  
 				case 3: 
 					System.out.println("------------------------------------------------------------------------------"); 
 					System.out.println("deleting employee"); 
-					status =employeeService.deleteEmployee(1); System.out.println(status);
+					//status =employeeService.deleteEmployee(1); System.out.println(status);
 					System.out.println(); 
 				case 4: System.out.println("----------------------------------------------------"); 
 					System.out.println("find employee by id"); 
@@ -110,16 +110,16 @@ public class Main {
 					System.out.println("------------------------------------------------------------------------------"); 
 					System.out.println("find employee by organization");
 					
-					Optional<List<Employee>> empoByOrg = employeeService.findByOrganizationId(1);
-					if(empoByOrg.isPresent()) { 
-						List<Employee> empList = empoByOrg.get();
-						for(Employee e: empList) { 
-							System.out.println(e); 
-							} 
-						} 
+//					Optional<List<Employee>> empoByOrg = employeeService.findByOrganizationId(1);
+//					if(empoByOrg.isPresent()) { 
+//						List<Employee> empList = empoByOrg.get();
+//						for(Employee e: empList) { 
+//							System.out.println(e); 
+//							} 
+//						} 
 					System.out.println(); 
 					}
-			counter++; 
+				counter++; 
 		  }
 		  
 		  
@@ -127,9 +127,9 @@ public class Main {
 		System.out.println("---------------------------------Department Section------------------------------"); 
 		List<Employee> empListObj = null;
 		  
-		Department dep = new Department((long)1, (long)1, "HR", empListObj);
-		Department dep2 = new Department((long)4, (long)2, "Accounting", empListObj);
-		Department dep3 = new Department((long)5, (long)2, "Engineering",empListObj); 
+		Department dep = new Department((long)1, (long)1, "HR");
+		Department dep2 = new Department((long)4, (long)2, "Accounting");
+		Department dep3 = new Department((long)5, (long)2, "Engineering"); 
 		DepartmentService depService = context.getBean(DepartmentService.class);
 		  
 		  
@@ -168,7 +168,7 @@ public class Main {
 					System.out.println("------------------------------------------------------------------------"); 
 					System.out.println("updating department"); 
 					
-					status = depService.updateDepartment(1, 1, "Changed HR"); 
+					//status = depService.updateDepartment(1, 1, "Changed HR"); 
 					System.out.println(status);
 					System.out.println(); 
 					
@@ -176,7 +176,7 @@ public class Main {
 					System.out.println("------------------------------------------------------------------------"); 
 					System.out.println("deleting department"); 
 					
-					status = depService.deleteDepartment(1); 
+					//status = depService.deleteDepartment(1); 
 					
 					System.out.println(status);
 					System.out.println(); 
@@ -208,26 +208,26 @@ public class Main {
 					System.out.println( "------------------------------------------------------------------------"); 
 					System.out.println("find employee by department"); 
 					
-					Optional<List<Employee>> empoByDept = depService.findEmployeesInDeparment(2);
+					//Optional<List<Employee>> empoByDept = depService.findEmployeesInDeparment(2);
 		  
-					if(empoByDept.isPresent()) { 
-						List<Employee> empList = empoByDept.get();
-						
-						for(Employee e: empList) { 
-							System.out.println(e); 
-							} 
-						} 
+//					if(empoByDept.isPresent()) { 
+//						List<Employee> empList = empoByDept.get();
+//						
+//						for(Employee e: empList) { 
+//							System.out.println(e); 
+//							} 
+//						} 
 					System.out.println();
 		  
-		  } counter++; }
+		  } 	counter++; }
 		  
 		  System.out.println("---------------------------------Organization Section------------------------------"); 
 		  List<Employee> empListObjOrg = null; 
 		  List<Department> deptListObjOrg = null;
 		  
-		  Organization org = new Organization((long)1, "orgname1", "first adddress",deptListObjOrg,empListObjOrg); 
-		  Organization org2 = new Organization((long)4,"orgname4", "four adddress", deptListObjOrg,empListObjOrg); 
-		  Organization org3 = new Organization((long)5, "orgname5", "five adddress",deptListObjOrg,empListObjOrg); 
+		  Organization org = new Organization((long)1, "orgname1", "first adddress"); 
+		  Organization org2 = new Organization((long)4,"orgname4", "four adddress"); 
+		  Organization org3 = new Organization((long)5, "orgname5", "five adddress"); 
 		  OrganizationService orgService = context.getBean(OrganizationService.class);
 		  
 		  counter = 1; 
@@ -264,9 +264,9 @@ public class Main {
 		  
   				case 2: 
   					System.out.println("-----------------------------------------------------------------------"); 
-  					System.out.println("updating organization"); status =
-		  
-					orgService.updateOrganization(1, "changed name", "changed address");
+  					System.out.println("updating organization"); 
+  					
+  					//status = orgService.updateOrganization(1, "changed name", "changed address");
   					
   					System.out.println(status); 
   					System.out.println();
@@ -276,7 +276,7 @@ public class Main {
   					System.out.println("-----------------------------------------------------------------------"); 
   					System.out.println("deleting organization"); 
   					
-  					status =orgService.deleteOrganization(1); 
+  					//status =orgService.deleteOrganization(1); 
   					
   					System.out.println(status);
   					System.out.println(); 
@@ -307,7 +307,7 @@ public class Main {
 					} 
   					System.out.println(); 
 				} 
-			  counter++; 
+			  	counter++; 
 		  }
 	}
 

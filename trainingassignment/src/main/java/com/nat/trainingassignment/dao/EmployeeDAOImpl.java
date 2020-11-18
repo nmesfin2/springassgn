@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.nat.trainingassignment.model.Employee;
 import com.nat.trainingassignment.util.DBUtil;
 
-@Repository
+//@Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
 
 	/*

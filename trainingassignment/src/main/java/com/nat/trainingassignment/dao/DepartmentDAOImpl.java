@@ -15,7 +15,7 @@ import com.nat.trainingassignment.model.Department;
 import com.nat.trainingassignment.model.Employee;
 import com.nat.trainingassignment.util.DBUtil;
 
-@Repository
+//@Repository
 public class DepartmentDAOImpl implements DepartmentDAO {
 
 	/*

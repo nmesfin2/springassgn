@@ -11,7 +11,9 @@ import com.nat.trainingassignment.dao.DepartmentDAOImpl;
 import com.nat.trainingassignment.dao.OrganizationDAO;
 import com.nat.trainingassignment.dao.OrganizationDAOImpl;
 import com.nat.trainingassignment.model.Department;
+import com.nat.trainingassignment.model.Employee;
 import com.nat.trainingassignment.model.Organization;
+import com.nat.trainingassignment.repository.OrganizationRepository;
 
 @Service
 public class OrganizationServiceImpl implements OrganizationService {
@@ -26,38 +28,71 @@ public class OrganizationServiceImpl implements OrganizationService {
 	 * orgService; }
 	 */
 	
+	//@Autowired
+	//private OrganizationDAO orgDAO;
 	@Autowired
-	private OrganizationDAO orgDAO;
+	OrganizationRepository organizationRepository;
+	
 	@Override
 	public String addOrganization(Organization organization) {
 		// TODO Auto-generated method stub
-		return orgDAO.addOrganization(organization);
+		//return orgDAO.addOrganization(organization);
+		Organization org = null;
+		try {
+			org = organizationRepository.save(organization);
+			return "success";
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			return "fail";
+		}
 	}
 
 	@Override
 	public String updateOrganization(long id,String name, String address) {
 		// TODO Auto-generated method stub
-		return orgDAO.updateOrganization(id, name, address);
+		// return orgDAO.updateOrganization(id, name, address);
+		return null;
 	}
 
 	@Override
 	public String deleteOrganization(long id) {
 		// TODO Auto-generated method stub
-		return orgDAO.deleteOrganization(id);
+		//return orgDAO.deleteOrganization(id);
+		try {
+			organizationRepository.deleteById(id);
+			return "success";
+		}catch(Exception e) {
+			e.printStackTrace();
+			return "fail";
+		}
 	}
 
 	@Override
 	public Optional<Organization> findById(long id) {
 		// TODO Auto-generated method stub
-		return orgDAO.findById(id);
+		// return orgDAO.findById(id);
+		Optional<Organization> optOrg = null;
+		try {
+			optOrg = organizationRepository.findById(id);
+			return optOrg;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override
 	public Optional<List<Organization>> getOrganizations() {
 		// TODO Auto-generated method stub
-		return orgDAO.getOrganizations();
+		// return orgDAO.getOrganizations();
+		Optional<List<Organization>> optOrgList = null;
+		try {
+			optOrgList =  Optional.of(organizationRepository.findAll());
+			return optOrgList;
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			return Optional.empty();
+		}
 	}
-
-	
 
 }

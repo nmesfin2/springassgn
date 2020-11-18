@@ -15,7 +15,7 @@ import com.nat.trainingassignment.model.Department;
 import com.nat.trainingassignment.model.Organization;
 import com.nat.trainingassignment.util.DBUtil;
 
-@Repository
+//@Repository
 public class OrganizationDAOImpl implements OrganizationDAO {
 
 	/*
