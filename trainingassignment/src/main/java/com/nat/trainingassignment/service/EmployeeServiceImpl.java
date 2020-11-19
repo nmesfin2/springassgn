@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nat.trainingassignment.dao.EmployeeDAO;
-import com.nat.trainingassignment.dao.EmployeeDAOImpl;
+//import com.nat.trainingassignment.dao.EmployeeDAOImpl;
 import com.nat.trainingassignment.model.Department;
 import com.nat.trainingassignment.model.Employee;
 import com.nat.trainingassignment.repository.EmployeeRepository;
@@ -28,6 +28,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	//private EmployeeDAO empDAO;
 	EmployeeRepository employeeRepository;
 	
+	
+	
 	@Override
 	public String addEmployee(Employee employee) {
 		//String status = empDAO.addEmployee(employee);
@@ -35,6 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		//return status;
 		Employee emp = null;
 		try {
+			
 			emp = employeeRepository.save(employee);
 			return "success";
 		}catch(Exception ex) {

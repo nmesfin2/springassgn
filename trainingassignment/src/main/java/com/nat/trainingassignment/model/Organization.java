@@ -1,10 +1,15 @@
 package com.nat.trainingassignment.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -24,5 +29,10 @@ public class Organization {
 	private String address;
 	//private List<Department> departments = new ArrayList<>();
 	//private List<Employee> employees = new ArrayList<>();
+	
+	@OneToMany(mappedBy="organization", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	private Set<Department> departments = new HashSet<>();
 
+	@OneToMany(mappedBy="organization", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	private Set<Employee> employees = new HashSet<>();
 }

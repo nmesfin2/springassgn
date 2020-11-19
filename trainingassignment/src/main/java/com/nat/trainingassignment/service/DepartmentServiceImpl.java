@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nat.trainingassignment.dao.DepartmentDAO;
-import com.nat.trainingassignment.dao.DepartmentDAOImpl;
+//import com.nat.trainingassignment.dao.DepartmentDAOImpl;
 import com.nat.trainingassignment.dao.EmployeeDAO;
-import com.nat.trainingassignment.dao.EmployeeDAOImpl;
+//import com.nat.trainingassignment.dao.EmployeeDAOImpl;
 import com.nat.trainingassignment.model.Department;
 import com.nat.trainingassignment.model.Employee;
 import com.nat.trainingassignment.repository.DepartmentRepository;
