@@ -13,12 +13,12 @@
 			<tr>
 			<td>UserName
 			</td>
-			<td><input type="text" name="userName" />
+			<td><input type="text" name="userName" /><div>${userName }</div>
 			</tr>
 			<tr>
 			<td>Password
 			</td>
-			<td><input type="text" name="password" />
+			<td><input type="text" name="password" /><div>${password }</div>
 			</tr><tr>
 			<td><input type="submit"/></td></tr>
 		</form>
