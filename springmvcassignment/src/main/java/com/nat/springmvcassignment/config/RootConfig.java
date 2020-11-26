@@ -20,10 +20,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("com.tcs.ecommerce.repository")
+@EnableJpaRepositories("com.nat.springmvcassignment.repository")
 @PropertySource("classpath:db.properties")
-@EnableWebMvc // it will enable the mvc env (@requestbaody, controller , response body, requestmapping, @valid
-@ComponentScan("com.nat.springmvcassignment")
 public class RootConfig {
 	@Autowired
 	private Environment environment;
@@ -55,7 +53,7 @@ public class RootConfig {
 		properties.setProperty("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
 		properties.setProperty("hibernate.dialect", environment.getProperty("hibernate.dialect"));
 		entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-		entityManagerFactoryBean.setPackagesToScan("com.tcs.ecommerce.model");
+		entityManagerFactoryBean.setPackagesToScan("com.nat.springmvcassignment.model");
 		entityManagerFactoryBean.setJpaProperties(properties);
 
 		return entityManagerFactoryBean;
