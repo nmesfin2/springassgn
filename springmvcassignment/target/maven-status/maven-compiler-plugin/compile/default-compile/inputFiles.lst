@@ -1,7 +1,9 @@
 C:\Users\natna\git\trainingassignrepo\springmvcassignment\src\main\java\com\nat\springmvcassignment\config\MyWebAppInitializer.java
 C:\Users\natna\git\trainingassignrepo\springmvcassignment\src\main\java\com\nat\springmvcassignment\config\RootConfig.java
 C:\Users\natna\git\trainingassignrepo\springmvcassignment\src\main\java\com\nat\springmvcassignment\controller\AuthController.java
+C:\Users\natna\git\trainingassignrepo\springmvcassignment\src\main\java\com\nat\springmvcassignment\interceptor\GuestInterceptor.java
 C:\Users\natna\git\trainingassignrepo\springmvcassignment\src\main\java\com\nat\springmvcassignment\repository\LoginRepository.java
 C:\Users\natna\git\trainingassignrepo\springmvcassignment\src\main\java\com\nat\springmvcassignment\config\WebConfig.java
 C:\Users\natna\git\trainingassignrepo\springmvcassignment\src\main\java\com\nat\springmvcassignment\model\Login.java
 C:\Users\natna\git\trainingassignrepo\springmvcassignment\src\main\java\com\nat\springmvcassignment\controller\HomeController.java
+C:\Users\natna\git\trainingassignrepo\springmvcassignment\src\main\java\com\nat\springmvcassignment\interceptor\AdminInterceptor.java
