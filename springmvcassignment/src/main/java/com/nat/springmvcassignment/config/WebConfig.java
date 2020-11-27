@@ -4,13 +4,27 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import com.nat.springmvcassignment.interceptor.AdminInterceptor;
+import com.nat.springmvcassignment.interceptor.GuestInterceptor;
 
 @Configuration
 @EnableWebMvc // it will enable the mvc env (@requestbaody, controller , response body, requestmapping, @valid
 @ComponentScan("com.nat.springmvcassignment")
-public class WebConfig {
+public class WebConfig extends WebMvcConfigurerAdapter{
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		// TODO Auto-generated method stu
+		registry.addInterceptor(new GuestInterceptor()).addPathPatterns("/guest");
+		registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/admin");
+		super.addInterceptors(registry);
+	}
+	
 	@Bean
 	public InternalResourceViewResolver	 resolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();

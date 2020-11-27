@@ -10,6 +10,7 @@
 		Hello from the home!
 		<div>
 			<a href="/auth/login.html">Login</a>
+			<a href="/guest">Guest Link</a>
 		</div>
 	</body>
 </html>
