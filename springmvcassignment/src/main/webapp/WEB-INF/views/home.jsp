@@ -10,7 +10,10 @@
 		Hello from the home!
 		<div>
 			<a href="/auth/login.html">Login</a>
+			<br>
 			<a href="/guest">Guest Link</a>
+			<br>
+			<a href="/registration/adduser">Registration</a>
 		</div>
 	</body>
 </html>

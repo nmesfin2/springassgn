@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.nat.springmvcassignment.model.Login;
 import com.nat.springmvcassignment.repository.LoginRepository;
+import com.nat.springmvcassignment.repository.RegistrationRepository;
 
 @Controller
 @RequestMapping(path="/auth")
@@ -20,6 +21,9 @@ public class AuthController {
 	
 	@Autowired
 	LoginRepository loginRepository;
+	
+	@Autowired
+	RegistrationRepository registrationRepository;
 	
 	@GetMapping("/login.html")
 	public String getLoginPage() {
@@ -38,14 +42,19 @@ public class AuthController {
 			});
 			modelAndView.setViewName("login");
 			return modelAndView;
+		}else {
+			String rUserName = registrationRepository.findById(login.getUserName()).get().getUserName();
+			String rPassword = registrationRepository.findById(login.getUserName()).get().getPassword();
+			if(login.getUserName().equals(rUserName) && login.getPassword().equals(rPassword))  {
+				System.out.println("success");
+				modelAndView.setViewName("home");
+				return modelAndView;
+			}
+			else {
+				System.out.println("fail");
+				modelAndView.setViewName("login");
+				return modelAndView;
+			}
 		}
-		if(login.equals(loginRepository.findById(login.getUserName()).get())) {
-			System.out.println("success");
-		}
-		else {
-			System.out.println("fail");
-		}
-		modelAndView.setViewName("redirect:/dashboard");
-		return modelAndView;
 	}
 }
